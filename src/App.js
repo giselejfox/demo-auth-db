@@ -5,7 +5,8 @@ import Login from './components/Login';
 import Profile from './components/Profile';
 import Navbar from './components/Navbar';
 
-import { getDatabase, ref, set as firebaseSet, onValue } from 'firebase/database'
+import { getDatabase, ref, onValue } from 'firebase/database'
+
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
   const [userInfo, setUserInfo] = useState({username: "loading...", description: "loading..."})
   // This is the information we get from firebase authentication (includes user id, user display name, and email)
   const [currentUser, setCurrentUser] = useState()
+  
 
   // updates the user who's currently using the page
   useEffect(() => {

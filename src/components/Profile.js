@@ -99,13 +99,11 @@ function InvalidInputModal({ invalidInputModalVisible, closeInvalidInputModal })
     return (
         <Modal show={invalidInputModalVisible} onHide={closeInvalidInputModal}>
             <Modal.Header closeButton>
-            <Modal.Title>Invalid Input</Modal.Title>
+                <Modal.Title>Invalid Input</Modal.Title>
             </Modal.Header>
             <Modal.Body>Make sure to fill out all the inputs</Modal.Body>
             <Modal.Footer>
-            <Button variant="secondary" onClick={closeInvalidInputModal}>
-                Close
-            </Button>
+                <Button variant="secondary" onClick={closeInvalidInputModal}>Close</Button>
             </Modal.Footer>
         </Modal>
     )

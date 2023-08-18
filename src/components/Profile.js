@@ -33,12 +33,14 @@ export default function Profile({ userInfo, currentUser }) {
             const newImgRef = storageRef(storage, 'profileImg/' + currentUser.uid + '.jpg');
             await uploadBytes(newImgRef, imageFile);
             const profileImageUrl = await getDownloadURL(newImgRef);
+            // Building the info to pass up
             let profileInfo = {
                 username: username,
                 description: description,
                 profileImageUrl: profileImageUrl,
                 profileImageAltText: imageAltText
             }
+            // Pass up the info and then reset the page
             const db = getDatabase();
             const userRef = ref(db, 'users/' + currentUser.uid )
             firebaseSet(userRef, profileInfo)
